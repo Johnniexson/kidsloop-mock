@@ -1,0 +1,85 @@
+<ng-container>
+  <h5 class="has-text-weight-bold has-text-left mb-4">Sign Up</h5>
+  <form [formGroup]="form">
+    <div class="field">
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          formControlName="name"
+          placeholder="Name *"
+        />
+      </div>
+      <small
+        class="help"
+        *ngIf="form.controls.name.touched && form.controls.name.invalid"
+        >Name is required</small
+      >
+    </div>
+    <div class="field">
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          formControlName="email"
+          placeholder="Email or Phone *"
+        />
+      </div>
+      <small
+        class="help"
+        *ngIf="form.controls.email.touched && form.controls.email.invalid"
+        >Enter a valid email of phone number</small
+      >
+    </div>
+    <div class="field">
+      <div class="control">
+        <input
+          class="input"
+          type="password"
+          formControlName="password"
+          min="6"
+          placeholder="Password *"
+        />
+      </div>
+      <small
+        class="help"
+        *ngIf="form.controls.password.touched && form.controls.password.invalid"
+        >Password is required (min 6 characters)</small
+      >
+    </div>
+    <div class="field">
+      <div class="control">
+        <input
+          class="input"
+          type="password"
+          formControlName="confirm_password"
+          min="6"
+          placeholder="Confrim Password *"
+        />
+      </div>
+      <small
+        class="help"
+        *ngIf="form.controls.confirm_password.touched && (form.controls.confirm_password.invalid || form.controls.password.value !== form.controls.confirm_password.value)"
+        >Password mismatch</small
+      >
+    </div>
+    <label class="checkbox txt">
+      <input type="checkbox" />
+      I agree to the <a class="has-color-blue" href="#">terms and conditions</a>
+    </label>
+    <div class="has-text-right">
+      <button
+        class="button is-small"
+        [class.is-loading]="processing"
+        [disabled]="processing"
+        (click)="submit()"
+      >
+        Sign Up
+      </button>
+    </div>
+  </form>
+  <div class="txt has-text-left mt-4">
+    Already have an account?
+    <span class="has-pointer has-color-navy-blue" routerLink="">Sign in</span>
+  </div>
+</ng-container>

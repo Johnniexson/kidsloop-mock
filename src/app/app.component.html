@@ -1,0 +1,68 @@
+<div class="section">
+  <div class="main">
+    <div class="card">
+      <div class="card-content">
+        <div class="media mb-0">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img
+                width="200"
+                alt="Logo"
+                src="../assets/kidsloop_min_logo.svg"
+              />
+            </figure>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="actions d-flex justify-content-between align-items-center">
+      <div class="mode d-flex align-items-center">
+        <span
+          class="icon has-color-navy-blue has-pointer is-size-6 mt-1 mr-2"
+          (click)="toggle_mode()"
+        >
+          <i
+            class="fas"
+            [class.fa-sun]="!dark_mode"
+            [class.fa-adjust]="dark_mode"
+          ></i>
+        </span>
+        <div class="dropdown is-up is-hoverable">
+          <div class="dropdown-trigger has-pointer">
+            <small aria-haspopup="true" aria-controls="dropdown-menu3">
+              <span class="is-underlined">Select Language</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </small>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">
+                English
+              </a>
+              <a href="#" class="dropdown-item">
+                French
+              </a>
+              <a href="#" class="dropdown-item">
+                Dutch
+              </a>
+              <a href="#" class="dropdown-item">
+                Korean
+              </a>
+              <a href="#" class="dropdown-item">
+                Chineese
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="adons">
+        <small class="has-pointer">Help</small>
+        <small class="has-pointer mx-3">Privacy</small>
+        <small class="has-pointer">Terms</small>
+      </div>
+    </div>
+  </div>
+</div>
